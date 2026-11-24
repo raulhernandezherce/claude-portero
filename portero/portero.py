@@ -29,7 +29,8 @@ import sys
 import time
 from pathlib import Path
 
-HOME = Path(os.environ.get("PORTERO_HOME", Path.home() / ".claude" / "portero"))
+# Por defecto, la carpeta donde está instalado este script (p. ej. ~/.claude/portero)
+HOME = Path(os.environ.get("PORTERO_HOME", Path(__file__).resolve().parent))
 CONFIG = HOME / "config.json"
 LOG = HOME / "log.jsonl"
 
